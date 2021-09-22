@@ -1,0 +1,13 @@
+Pedro
+usuarios
+alumnos
+problemas
+
+Cynthia
+carreras
+categorias
+
+Many 
+docentes 
+ediciones 
+equipos
