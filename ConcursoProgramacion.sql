@@ -1,12 +1,12 @@
 Create database ConcursoProgram
 
-/*USE ConcursoProgram 
-GO*/
+USE ConcursoProgram 
+GO
 
 on primary
 (
   name=ConcursoProgram_dat,--nombre logico
-  filename= 'D:\Base_Concurso\ConcursoProgram\ConcursoProgram_dat.mdf',--ruta fisica
+  filename= 'C:\Base_Concurso\ConcursoProgram\ConcursoProgram_dat.mdf',--ruta fisica
   size= 5MB,
   maxsize= 10MB,
   filegrowth= 1MB
@@ -14,7 +14,7 @@ on primary
 log on
 (
    name=ConcursoProgram_log,--nombre logico
-   filename='D:\Base_Concurso\ConcursoProgram\ConcursoProgram_log.ldf', --ruta fisica
+   filename='C:\Base_Concurso\ConcursoProgram\ConcursoProgram_log.ldf', --ruta fisica
    size= 3MB,
    maxsize= 5MB,
    filegrowth= 1MB
