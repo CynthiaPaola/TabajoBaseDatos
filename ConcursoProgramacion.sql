@@ -53,4 +53,20 @@ create table ProblemasResueltos(
 )
 go
 
+create table Carreras 
+(
+idCarrera int not null,
+nombre varchar(100) not null,
+siglas varchar(10) not null,
+constraint pk_carreras primary key(idCarrera)
+)
+go
 
+create table Categorias 
+(
+idCategoria int not null,
+nombre varchar(100) not null,
+semestreLimite varchar(20) not null,
+constraint pk_categorias primary key(idCategoria)
+)
+go
