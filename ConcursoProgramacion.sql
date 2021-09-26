@@ -70,3 +70,60 @@ semestreLimite varchar(20) not null,
 constraint pk_categorias primary key(idCategoria)
 )
 go
+
+create table Docentes(
+iddocentes int not null,
+escolaridad varchar(50) not null,
+especialidad varchar(50) not null,
+celular varchar(15) not null,
+carrera varchar(100) not null,
+CONSTRAINT pk_docentes PRIMARY KEY (iddocentes)
+)
+go
+
+create table Ediciones(
+idediciones int not null,
+nombre varchar(30) not null,
+fecharegistro date not null,
+fechaevento date not null,22/JUNIO/2020 19/JUNIO/2020
+duracioninicio int not null,
+duracionfinal int not null,
+CONSTRAINT pk_ediciones PRIMARY KEY (idediciones)
+)
+go
+
+create table Equipos(
+idequipos int not null,
+nombre varchar(50) not null,
+integrantes int not null,
+asesor varchar(50) not null,
+categoria varchar(20) not null,
+puntos int not null,
+cantidadproblemasresueltos int not null,
+CONSTRAINT pk_equipos PRIMARY KEY (idequipos)
+)
+go
+
+/*Claves externas (FK)*/
+
+/*Claves unicas (UQ)*/
+ALTER TABLE Docentes ADD CONSTRAINT UQ_Carrera UNIQUE (carrera)
+go
+ALTER TABLE Ediciones ADD CONSTRAINT UQ_Nombre UNIQUE (nombre)
+go
+ALTER TABLE Equipos ADD CONSTRAINT UQ_Categoria UNIQUE (categoria)
+go
+
+/*Restricciones check(CHK)*/
+ALTER TABLE Docentes ADD CONSTRAINT CHK_Telefono_Docente CHECK (telefono LIKE '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
+go
+ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Registro CHECK (fecharegistro BETWEEN YEAR(GETDATE()) AND 9999)
+go
+ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Evento CHECK(fecharegistro<fechaevento)
+go
+ALTER TABLE Equipo ADD CONSTRAINT CHK_Integrantes CHECK (integrantes<5)
+go
+ALTER TABLE Equipo ADD CONSTRAINT CHK_Categoria CHECK (categoria in ('Facil','Medio','Dificil','Experto'))
+go
+
+/*Restricciones Default (DF)*/
