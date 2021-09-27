@@ -84,7 +84,8 @@ constraint pk_categorias primary key(idCategoria)
 go
 
 create table Docentes(
-iddocentes int not null,
+idDocentes int not null,
+idCarrera int not null,
 escolaridad varchar(50) not null,
 especialidad varchar(50) not null,
 cedula varchar(15) not null,
@@ -94,7 +95,9 @@ CONSTRAINT pk_docentes PRIMARY KEY (iddocentes)
 go
 
 create table Ediciones(
-idediciones int not null,
+idEdiciones int not null,
+idEquipos int not null,
+idBancoProblemas int not null,
 nombre varchar(30) not null,
 fecharegistro date not null,
 fechaevento date not null,
@@ -105,7 +108,9 @@ CONSTRAINT pk_ediciones PRIMARY KEY (idediciones)
 go
 
 create table Equipos(
-idequipos int not null,
+idEquipos int not null,
+idCategoria int not null,
+idProblemaRes int not null,
 nombre varchar(50) not null,
 integrantes int not null,
 asesor varchar(50) not null,
@@ -116,6 +121,13 @@ CONSTRAINT pk_equipos PRIMARY KEY (idequipos)
 )
 go
 
+create table Edicion(
+idedicion int not null,
+nombre varchar(50) not null,
+globo varchar(10) not null,
+CONSTRAINT pk_edicion PRIMARY KEY (idedicion)
+)
+go
 /********************
 Claves unicas (uq)
 ********************/
@@ -135,16 +147,40 @@ go
 alter table BancoProblemas add constraint Uq_Descripcion unique (descripcion)
 go
 
+--Table de Docentes
 ALTER TABLE Docentes ADD CONSTRAINT UQ_Carrera UNIQUE (carrera)
 go
+
+--Table de Ediciones
 ALTER TABLE Ediciones ADD CONSTRAINT UQ_Nombre UNIQUE (nombre)
 go
+
+--Table de Equipos
 ALTER TABLE Equipos ADD CONSTRAINT UQ_Categoria UNIQUE (categoria)
+go
+
+--Table de Edicion
+ALTER TABLE Edicion ADD CONSTRAINT UQ_Globo UNIQUE (globo)
 go
 
 /**************
 Creacion de Fk 
 **************/
+--Table de Docentes
+ALTER TABLE Docentes ADD CONSTRAINT FK_Carreras_Docentes FOREIGN KEY (idCarrera) REFERENCES Carreras(idCarrera)
+go
+
+--Table de Ediciones
+ALTER TABLE Ediciones ADD CONSTRAINT FK_Equipos_Ediciones FOREIGN KEY (idEquipos) REFERENCES Equipos(idEquipos)
+go
+ALTER TABLE Ediciones ADD CONSTRAINT FK_BancoProblemas_Ediciones FOREIGN KEY (idBancoProblemas) REFERENCES BancoProblemas(idBancoProblemas)
+go
+
+--Table de Equipos
+ALTER TABLE Equipos ADD CONSTRAINT FK_Categorias_Equipos FOREIGN KEY (idCategoria) REFERENCES Categorias(idCategoria)
+go
+ALTER TABLE Equipos ADD CONSTRAINT FK_ProblemasResueltos_Equipos FOREIGN KEY (idProblemaRes) REFERENCES Equipos(idProblemaRes)
+go
 
 /**********************
 Restricciones de Check
@@ -175,15 +211,24 @@ go*/
 alter table BancoProblemas add constraint chk_puntos check (puntos<=5)
 go
 
+--Table de Docentes
 ALTER TABLE Docentes ADD CONSTRAINT CHK_Telefono_Docente CHECK (telefono LIKE '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
 go
-ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Registro CHECK (fecharegistro BETWEEN YEAR(GETDATE()) AND 9999)
+
+--Table de Ediciones
+ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Registro CHECK (fecharegistro LIKE '[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]')
 go
 ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Evento CHECK(fecharegistro<fechaevento)
 go
+
+--Table de Equipo
 ALTER TABLE Equipo ADD CONSTRAINT CHK_Integrantes CHECK (integrantes<5)
 go
 ALTER TABLE Equipo ADD CONSTRAINT CHK_Categoria CHECK (categoria in ('Facil','Medio','Dificil','Experto'))
+go
+
+--Table de Edicion
+ALTER TABLE Edicion ADD CONSTRAINT CHK_Globo CHECK (globo in ('Verde','Amarillo','Rojo','Negro'))
 go
 
 /*********************
@@ -205,6 +250,21 @@ go
 
 --Table de BancoProblemas
 alter table BancoProblemas add constraint Df_puntos_BancoProble default 1 for puntos
+go
+
+--Table de Docentes
+ALTER TABLE Docentes ADD CONSTRAINT DF_cedula_Docente default 'XXX-XXX-XXXX' for cedula
+go
+
+--Table de Ediciones
+/*ALTER TABLE Ediciones ADD CONSTRAINT DF*/
+
+--Table de Equipos
+ALTER TABLE Equipos ADD CONSTRAINT DF_puntos_Equipos default 1 for puntos
+go
+
+--Table de Edicion
+ALTER TABLE Edicion ADD CONSTRAINT DF_globo_Edicion default 'Blanco' for globo
 go
 
 
