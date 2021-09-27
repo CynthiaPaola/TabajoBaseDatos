@@ -87,7 +87,7 @@ create table Docentes(
 iddocentes int not null,
 escolaridad varchar(50) not null,
 especialidad varchar(50) not null,
-celular varchar(15) not null,
+cedula varchar(15) not null,
 carrera varchar(100) not null,
 CONSTRAINT pk_docentes PRIMARY KEY (iddocentes)
 )
@@ -98,8 +98,8 @@ idediciones int not null,
 nombre varchar(30) not null,
 fecharegistro date not null,
 fechaevento date not null,
-duracioninicio int not null,
-duracionfinal int not null,
+duracioninicio time not null,
+duracionfinal time not null,
 CONSTRAINT pk_ediciones PRIMARY KEY (idediciones)
 )
 go
