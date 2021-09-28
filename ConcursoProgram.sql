@@ -30,8 +30,6 @@ Create table Usuarios(
 	estatus bit not null,
 	tipo varchar (40) not null,
 	password varchar(50) not null,
-	noControl int not null,
-	noDocente
 	constraint pk_usuarios primary key (idUsuarios)
 )
 go
@@ -59,6 +57,7 @@ go
 create table ProblemasResueltos(
     
 	idProblemaRes int not null,
+	idEquipos
 	nomProblemaRes varchar(100) not null,
 	duracion time not null,
 	puntaje float,
@@ -111,7 +110,6 @@ go
 create table Equipos(
 idEquipos int not null,
 idCategoria int not null,
-idProblemaRes int not null,
 nombre varchar(50) not null,
 integrantes int not null,
 asesor varchar(50) not null,
@@ -122,8 +120,8 @@ CONSTRAINT pk_equipos PRIMARY KEY (idequipos)
 )
 go
 
-create table Edicion(
-idedicion int not null,
+create table Problemaspropuestos(
+idPropuestos int not null,
 nombre varchar(50) not null,
 globo varchar(10) not null,
 CONSTRAINT pk_edicion PRIMARY KEY (idedicion)
