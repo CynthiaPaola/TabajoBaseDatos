@@ -37,8 +37,10 @@ go
 create table Alumnos(
     
 	noControl int not null,
+	idProblemaRes int not null,
+	idUsuarios int not null,
 	semestre varchar(2) not null,
-	carrera varchar (100) not null,
+	idCarrera int not null,
 	constraint pk_numControl primary key (noControl)
 )
 go
@@ -55,10 +57,10 @@ create table BancoProblemas(
 go
 
 create table ProblemasResueltos(
-    
+
 	idProblemaRes int not null,
-	idEquipos
-	nomProblemaRes varchar(100) not null,
+	idPropuestos int not null,
+	idEquipos int not null,
 	duracion time not null,
 	puntaje float,
 	constraint pk_problemasRes primary key (idProblemaRes)
@@ -165,6 +167,20 @@ go
 /**************
 Creacion de Fk 
 **************/
+--Tabla de Alumnos
+alter table Alumnos add constraint fk_usuario_alumnos foreign key (idUsuarios) references Usuarios (idUsuarios)
+go
+alter table Alumnos add constraint fk_problemaRes_alumnos foreign key (idProblemaRes) references ProblemasResueltos (idProblemaRes)
+go
+alter table Alumnos add constraint fk_carrera_alumnos foreign key (idCarrera) references Carreras(idCarrera)
+go
+
+--Tabla de ProblemasResueltos
+alter table ProblemasResueltos add constraint fk_propuestos_ProblemaRes foreign key (idPropuestos) references Problemaspropuestos (idPropuestos)
+go
+alter table ProblemasResueltos add constraint fk_equipo_ProblemaRes foreign key (idEquipos) references Equipos (idEquipos)
+go 
+
 --Table de Docentes
 ALTER TABLE Docentes ADD CONSTRAINT FK_Carreras_Docentes FOREIGN KEY (idCarrera) REFERENCES Carreras(idCarrera)
 go
@@ -205,8 +221,8 @@ alter table ProblemasResueltos add constraint chk_puntaje check (puntaje<=5)
 go
 
 --Table de BancoProblemas
-/*alter table BancoProblemas add constraint chk_tiempMaxEjec check 
-go*/
+alter table BancoProblemas add constraint chk_tiempMaxEjec check (tiempMaxEjec<=5)
+go
 alter table BancoProblemas add constraint chk_puntos check (puntos<=5)
 go
 
