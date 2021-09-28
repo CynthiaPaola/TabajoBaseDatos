@@ -1,5 +1,4 @@
 Create database ConcursoProgram
-
 /*USE ConcursoProgram 
 GO*/
 
@@ -31,6 +30,8 @@ Create table Usuarios(
 	estatus bit not null,
 	tipo varchar (40) not null,
 	password varchar(50) not null,
+	noControl int not null,
+	noDocente
 	constraint pk_usuarios primary key (idUsuarios)
 )
 go
