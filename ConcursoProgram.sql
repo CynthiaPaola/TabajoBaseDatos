@@ -155,12 +155,13 @@ ALTER TABLE Ediciones ADD CONSTRAINT UQ_Nombre UNIQUE (nombre)
 go
 
 --Table de Equipos
-ALTER TABLE Equipos ADD CONSTRAINT UQ_Categoria UNIQUE (categoria)
+ALTER TABLE Equipos ADD CONSTRAINT UQ_nombreEq UNIQUE (nombre)
 go
 
---Table de Edicion
-ALTER TABLE Edicion ADD CONSTRAINT UQ_Globo UNIQUE (globo)
+--Table de Problemaspropuestos
+ALTER TABLE Problemaspropuestos ADD CONSTRAINT UQ_Globo UNIQUE (globo)
 go
+
 
 /**************
 Creacion de Fk 
@@ -174,23 +175,17 @@ go
 --Tabla de ProblemasResueltos
 alter table ProblemasResueltos add constraint fk_propuestos_ProblemaRes foreign key (idPropuestos) references Problemaspropuestos (idPropuestos)
 go
-alter table ProblemasResueltos add constraint fk_equipo_ProblemaRes foreign key (idEquipos) references Equipos (idEquipos)
+alter table ProblemasResueltos add constraint fk_ediciones_ProblemaRes foreign key (idEdiciones) references Ediciones (idEdiciones)
 go 
 
 --Table de Docentes
-ALTER TABLE Docentes ADD CONSTRAINT FK_Carreras_Docentes FOREIGN KEY (idCarrera) REFERENCES Carreras(idCarrera)
-go
-
---Table de Ediciones
-ALTER TABLE Ediciones ADD CONSTRAINT FK_Equipos_Ediciones FOREIGN KEY (idEquipos) REFERENCES Equipos(idEquipos)
-go
-ALTER TABLE Ediciones ADD CONSTRAINT FK_BancoProblemas_Ediciones FOREIGN KEY (idBancoProblemas) REFERENCES BancoProblemas(idBancoProblemas)
+ALTER TABLE Docentes ADD CONSTRAINT FK_Carreras_Docentes FOREIGN KEY (idCarrera) REFERENCES Carreras (idCarrera)
 go
 
 --Table de Equipos
-ALTER TABLE Equipos ADD CONSTRAINT FK_Categorias_Equipos FOREIGN KEY (idCategoria) REFERENCES Categorias(idCategoria)
+ALTER TABLE Equipos ADD CONSTRAINT FK_Categorias_Equipos FOREIGN KEY (idCategoria) REFERENCES Categorias (idCategoria)
 go
-ALTER TABLE Equipos ADD CONSTRAINT FK_ProblemasResueltos_Equipos FOREIGN KEY (idProblemaRes) REFERENCES Equipos(idProblemaRes)
+ALTER TABLE Equipos ADD CONSTRAINT FK_ediciones_Equipos FOREIGN KEY (idEdiciones) REFERENCES Ediciones (idEdiciones)
 go
 
 /**********************
@@ -223,7 +218,7 @@ alter table BancoProblemas add constraint chk_puntos check (puntos<=5)
 go
 
 --Table de Docentes
-ALTER TABLE Docentes ADD CONSTRAINT CHK_Telefono_Docente CHECK (telefono LIKE '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
+ALTER TABLE Docentes ADD CONSTRAINT CHK_Cedula_Docente CHECK (cedula LIKE '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
 go
 
 --Table de Ediciones
@@ -233,13 +228,15 @@ ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Evento CHECK(fecharegistro<fechae
 go
 
 --Table de Equipo
-ALTER TABLE Equipo ADD CONSTRAINT CHK_Integrantes CHECK (integrantes<5)
+ALTER TABLE Equipos ADD CONSTRAINT CHK_nocontrol1 CHECK (nocontrol1 LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 go
-ALTER TABLE Equipo ADD CONSTRAINT CHK_Categoria CHECK (categoria in ('Facil','Medio','Dificil','Experto'))
+ALTER TABLE Equipos ADD CONSTRAINT CHK_nocontrol2 CHECK (nocontrol2 LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+go
+ALTER TABLE Equipos ADD CONSTRAINT CHK_nocontrol3 CHECK (nocontrol3 LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 go
 
---Table de Edicion
-ALTER TABLE Edicion ADD CONSTRAINT CHK_Globo CHECK (globo in ('Verde','Amarillo','Rojo','Negro'))
+--Table de Problemaspropuestos
+ALTER TABLE Problemaspropuestos ADD CONSTRAINT CHK_Globo CHECK (globo in ('Verde','Amarillo','Rojo','Negro'))
 go
 
 /*********************
@@ -274,8 +271,8 @@ go
 ALTER TABLE Equipos ADD CONSTRAINT DF_puntos_Equipos default 1 for puntos
 go
 
---Table de Edicion
-ALTER TABLE Edicion ADD CONSTRAINT DF_globo_Edicion default 'Blanco' for globo
+--Table de Problemaspropuestos
+ALTER TABLE Problemaspropuestos ADD CONSTRAINT DF_globo_Edicion default 'Blanco' for globo
 go
 
 
