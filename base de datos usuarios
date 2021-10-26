@@ -47,3 +47,33 @@ insert into Usuarios values(60,'Jesus Rojas Mejia','Madero #19','351-119-9080','
 insert into Usuarios values(61,'Jose vazquez linares','2 de abril #70','351-780-1087','jose@gmail.com','jose08','Comprador','M','1')	
 insert into Usuarios values(62,'Cristofer Jesus Santos Valencia','Nispero #540','351-100-5459','csantos398@gmail.com','ASANTOS123','Comprador','M','1')	
 insert into Usuarios values(63,'Erick Avalos Valencia','Pera #34','351-545-5432','eavalos123@hotmail.com','eavalos321','Comprador','M','1')
+
+
+insert into usuarios values(32,'Jose alfredo Rodrigues ','Insurgentes sur #5','351-209-5043','JoseAlfred@gmail.com','JoseAR3090','Comprador','M','1')				
+insert into usuarios values(33,'Vladimir Guitierres Salvador','Cerezo #10','351-051-3041','Vladimir950@gmail.com','090520A','Comprador','M','1')				
+insert into usuarios values(34,'José Varela Hernández','Uruanan #772','351-125-2550','josev@gmail.com','patas_','Comprador','M','1')				
+insert into usuarios values(35,'Manuel Varela','Patzcuaro #345','351-258-2551','manyv@gmail.com','1345tr','Vendedor','M','1')				
+insert into usuarios values(36,'Maria Gomez ','La rinconada #428','351-111-3445','magomez@gmail.com','Magomez234','Vendedor','F','1')				
+insert into usuarios values(37,'Juana Lopez ','Las fuentes #334','351-123-4678','juanita@gmail.com','Juanita405','vendedor','f','1')				
+insert into usuarios values(38,'Zambrano Verduzco Emmanuel Alberto','Yucatan#86','351-134-8623','Meny220699J@gmail.com','Hola.123','Comprador','M','1')				
+insert into usuarios values(39,'Zambrano Verduzco Jose Manuel','Ferrocaril#335','351-100-0580','jzambranoverduzco@gmail.com','Hola.123','Vendedor','M','1')				
+insert into usuarios values(40,'Jorge Gutierritos Fernandez','Valencia #455','351-452-4545','Gutierritos_uwu@outlook.com','Guitierritos123','Comprador','M','1')			Jorge Adrian Lopez Alcazar 	
+insert into usuarios values(41,'Dante Avila Camacho','Galeana #34','351-165-2552','Dante_avi@gmail.com','Dante3434','Comprador','M','1')				
+insert into usuarios values(42,'Anna Maria Gavilan Solis','Av, de las Rosas #555','351-126-8974','annaGS_@gmai.com','NosoyunaSeñora','Vendedor','F','1')		Cynthia Paola Alfaro Reyes		
+insert into usuarios values(43,'Javier Gavilondo Soler ','joligud #6','351-699-4422','Gavilondo_javis@gmail.com','GavilanoPaloma5','Administrador','M','1')				
+insert into usuarios values(44,'Antonio Aguilera Fernandez','michoacan #36','351-666-1636','aaFernandez@gmail.com','123456','Vendedor','M','0')				
+insert into usuarios values(45,'Victoria Morales Guzman','Queen #90','351-158-7899','mora_tori@gmail.com','directionerOsi','Comprador','F','1')				
+insert into usuarios values(46,'Adriana Herrera Gonzalez','Aycidici #89','351-198-9058','adriana_unicornio55@gmail.com','unicornioArcoirisFeliz','Comprador','F','1')				
+insert into usuarios values(47,'Kimberly Gonzalez Bocanegra','Duero #589','351-987-4528','Kim_boca@gmail.com','elBarrioLoco','Comprador','F','0')				
+insert into usuarios values(48,'Alejandro Fernandez Fernandez','Deams #177','351-769-1205','ferni_alex@gmail.com','sueñoum45','Comprador','M','0')				
+insert into usuarios values(49,'Casandra Rosales Valencia','Camecuaro #56','351-458-4221','Casi_rosaVale@gmail.com','casimiro7u7','Administrador','F','1')				
+insert into usuarios values(50,'Alfredo Valdomero Pintos','Av. DePortal #88','351-122-4513','fredoPintos@gmail.com','fredow88','Vendedor','M','1')				
+insert into usuarios values(51,'Ricardo Valencia Ramirez','Bethoven #455','351-133-2578','richieValRa@gmail.com','elrichivalens66','Comprador','M','1')				
+insert into usuarios values(52,'Miguel Angel Martinez Nava','Valencia #168','351-156-8719','zacariasPiedrasDelMar@gmail.com','paracetamol','Comprador','M','1')				
+insert into usuarios values(53,'Daniel Martinez Nava','CastroVille #4','351-156-8718','panchoPichacuas@gmail.com','jicaleta2da','Comprador','M','1')				
+insert into usuarios values(54,'Francisco Fernando Torres','Michoacan #352','351-111-1100','fTorres12@gmail.com','12345678A9','Comprador','M','1')	Ana Aurelia Galvan Cortes			
+insert into usuarios values(55,'Tania Lizeth Cortes','Morelos #43','351-129-1200','TaniaLCs@gmail.com','tacosabroso','Comprador','F','1')				
+insert into usuarios values(56,'Abraham Pardo Orozco','Juarez poniente #56','351-122-9937','okaypardo@gmail.com','aypapikerico','Comprador','M','1')	Abraham Pardo Orozco			
+insert into usuarios values(57,'Gerardo Pardo Orozco','Juarez poniente #56','351-114-0563','gerarpard@gmail.com','aymamikerico','Comprador','M','1')	Abraham Pardo Orozco			
+insert into usuarios values(58,'Angel Chavez Guizar','Jardinadas #112','351-156-8802','Angel73@gmail.com','Elzacakakas2000','Comprador','M','1')	Jesus Alejandro Chavez Cendejas			
+insert into usuarios values(59,'Alejandro Chavez Cendejas','Jardianadas #112','351-198-4001','Ale23@gmail.com','23Ale23','Vendedor','M','1')
