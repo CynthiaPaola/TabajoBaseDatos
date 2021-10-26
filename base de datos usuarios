@@ -1,3 +1,22 @@
+select * from Usuarios
+
+insert into usuarios values(17,'Manuel Sanchez Valdez ','Irapuato#547','351-478-1045','Manu_yhi@hotmail.com','T@r@M4x','Comprador','M','1')
+insert into usuarios values(18,'Melissa Barajas Rodriguez ','Las Fuentes #78','351-784-8940','cats547@gmail.com','C4t@s100:','Comprador','F','1')
+insert into usuarios values(20,'Pablo Salvador Torres Diaz','Valencia Segunda Seccion #45','351-789-41-05','pTorres401@gmail.com','Mari@br02','Comprador','M','1')
+insert into usuarios values(21,'Pedro Hernandez Flores','Las Fuentes #784','351-480-5557','phernanFl52@gmail.com','C@n3l@52:','Comprador','M','1')
+insert into usuarios values(22,'Victor Martin Mercado Ortega','Madero Norte #12','351-411-7894','kunichigua54@gmail.com','2729300409V','Comprador','M','1')
+insert into usuarios values(23,'Carlos Avila Lopez ','Egido El duero #470','351-784-0212','Snaker_45_lo@gmail.com','Sn4k3r1@','Comprador','M','1')
+insert into usuarios values(24,'Victor De la Parra Ayala ','Valle dorado','354-780-7894','Vict_parra@gmail.com','478410','Comprador','M','1')
+insert into usuarios values(25,'Cruz Guzman Valdez','Circunvalacion #527','351-415-4578','Cruzgv@gmail.com','Comp@145:','Comprador','F','1')
+insert into usuarios values(26,'Lionel Andrés Messi Cuccittini','Pino Suarez #132','351-132-5890','LaPulga10@gmail.com','oro6Balones_','Comprador','M','1')
+insert into usuarios values(27,'Osvaldo Palacios Flores','Morelos Norte #15','351-133-4432','Osvaldo_PF@gmail.com','mariana_TV','Comprador','M','1')
+insert into usuarios values(28,'Estela Marcela Del Monte Venecia','Turbo #25','351-101-1010','EsteDelMonte@hotmail.com','Tela_Marce','Comprador','F','1')
+insert into usuarios values(29,'Marty McFly Blake','Lakewood #18','351-001-7770','BackToTheFT@yahoo.com','Jennifer','Comprador','M','1')
+insert into usuarios values(30,'Juan Perez','Calle callosa #16','351-593-1867','juanp@gmail.com','contraseniajaja','Comprador','M','1')
+insert into usuarios values(31,'Fulano de tal','Fulanoville #82','351-028-2693','fulalala@gmail.com','elfulanoooooo','Comprador','M','1')
+
+
+
 insert into Usuarios values(304,'Jose Antonio Esparza','francisco imadero #48','353-105-7001','josep_99@gmail.com','Hola.123','Comprador','M','1')
 insert into Usuarios values(305,'Fernando Sandoval','pedro moreno #4','353-138-0918','fernandopro88@hotmail.com','vasodeagua77','Comprador','M','1')
 insert into Usuarios values(306,'Jesus Figeroa Andrade','44455','353-144-7799','jesusfig@gmail.com','1997Hola.123','Comprador','M','1')
