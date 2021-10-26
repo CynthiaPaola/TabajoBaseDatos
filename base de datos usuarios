@@ -12,4 +12,22 @@ insert into Usuarios values(314,'Ale Garcia','valencia #3','353-115-1389','garci
 insert into Usuarios values(60,'Jesus Rojas Mejia','Madero #19','351-119-9080','Jesus@gmail.com','Jesus99','Comprador','M','1')	
 insert into Usuarios values(61,'Jose vazquez linares','2 de abril #70','351-780-1087','jose@gmail.com','jose08','Comprador','M','1')	
 insert into Usuarios values(62,'Cristofer Jesus Santos Valencia','Nispero #540','351-100-5459','csantos398@gmail.com','ASANTOS123','Comprador','M','1')	
-insert into Usuarios values(63,'Erick Avalos Valencia','Pera #34','351-545-5432','eavalos123@hotmail.com','eavalos321','Comprador','M','1')	
+insert into Usuarios values(63,'Erick Avalos Valencia','Pera #34','351-545-5432','eavalos123@hotmail.com','eavalos321','Comprador','M','1')
+
+/*Meny*/
+INSERT INTO Usuarios values(16,'ROBERTO SUAREZ ZINZUN','Juarez #179', '355-100-5690', 'robert@gmail.com', 'SU4r3Z.123', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(17, 'ANTONIO SUAREZ ZINZUN', 'Juarez #179', '355-100-5690', 'antonio@gmail.com', 'SU4r3Z.123', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(18, 'Alberto Santos Mondragon', 'Juarez #123', '351-124-7812', 'alberto@gmail.com', 'Hola.123', 'Vendedor', 'M', '1');
+INSERT INTO Usuarios values(19, 'Flor Santos Mondragon', 'Juarez #123', '351-124-7712', 'flor@gmail.com', 'Hola.123', 'Administrador', 'F', '1');
+INSERT INTO Usuarios values(20, 'Hugo Santos Mondragon', 'Juarez #123', '351-124-7712', 'hugo@gmail.com', 'Hola.123', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(21, 'Hugo Santos Torres', 'Juarez #18', '351-167-8918', 'hugo@gmail.com', 'Hola.123', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(22, 'Mario Lopez Sanchez', 'Valencia #547', '351-457-0478', 'mariosp_35@gmail.com', 'R@ckstarG4m3s', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(23, 'Matha Marcela Ríos Sánchez', 'Olmo #33', '351-223-4422', 'Marce22@gmail.com', 'Megacaster2', 'Comprador', 'F', '1');
+INSERT INTO Usuarios values(24, 'Alejandro Oliveira Pedrol', 'Sevilla #22', '351-478-2245', 'AOPedrol@hotmail.com', 'RealMadrid', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(25, 'Critiano Ronaldo Dos Santos Aveiro', 'Granadas #33', '351-777-7777', 'Elbicho@gmail.com', 'Aymimadre', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(26, 'Sergio Alejandro Castillo Ríos', 'Olmo #88', '351-147-2431', 'Minkas22@hotmail.es', 'Contraseña123', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(27, 'Ernesto de la Cruz', 'Parota #68', '351-258-4568', 'Ernesto_Cru@hotmail.com', 'BAE42069', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(28, 'Arnold Berón Camboya', 'Mozzart #78', '351-148-9586', 'Camboya@hotmail.com', 'Elcrea256', 'Comprador', 'F', '1');
+INSERT INTO Usuarios values(29, 'Bill Gates', 'Bethoven #777', '351-285-6947', 'WindowsoisMINE@hotmail.com', 'Windows89', 'Vendedor', 'M', '1');
+INSERT INTO Usuarios values(30, 'Sofía Peralta', 'Encino #75', '351-452-6987', 'Sofi_22@hotmail.es', 'Beliver', 'Comprador', 'M', '1');
+INSERT INTO Usuarios values(31, 'Carlos Alberto Ortega Pulido', 'Valencia #56', '351-166-3345', 'Gdjdo33@gmail.com', 'Hola.123', 'Vendedor', 'M', '1');	
