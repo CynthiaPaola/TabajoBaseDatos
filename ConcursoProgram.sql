@@ -128,6 +128,33 @@ CONSTRAINT pk_edicion PRIMARY KEY (idPropuestos)
 go
 
 /********************
+Inserciones de tablas
+********************/
+--Insercion tabla Problemas propuestos
+insert into Problemaspropuestos values(1,'Escriba el abecedario','Verde') 						
+insert into Problemaspropuestos values(2,'Tabla mutiplicar','Amarillo') 						
+insert into Problemaspropuestos values(3,'Escriba tu nombre tecla escriba','Rojo') 						
+insert into Problemaspropuestos values(4,'Sacar numero piesa el jugador','Negro') 						
+insert into Problemaspropuestos values(5,'Sacar numero primos','Verde') 						
+insert into Problemaspropuestos values(6,'Hacer calendario ','Amarillo') 						
+insert into Problemaspropuestos values(7,'Calcular area de triangulo','Rojo') 						
+insert into Problemaspropuestos values(8,'Hacer que diga hora','Negro') 						
+insert into Problemaspropuestos values(9,'Hacer una calculadora','Verde') 						
+insert into Problemaspropuestos values(10,'Tener control de dias','Amarillo')
+
+--Inserciones tabla Categoria
+insert into Categorias values(1,'Pigüinos explocivo','Semestre 5')					
+insert into Categorias values(2,'Black star','Semestre 2')					
+insert into Categorias values(3,'Los yhiii','Semestre 5')					
+insert into Categorias values(4,'Los R','Semestre 2')					
+insert into Categorias values(5,'Super chica','Semestre 5')					
+insert into Categorias values(6,'Marselo','Semestre 4')					
+insert into Categorias values(7,'Los 3 chiflados','Semestre 2')					
+insert into Categorias values(8,'Masha y oso','Semestre 4')					
+insert into Categorias values(9,'Taquitos','Semestre 2')					
+insert into Categorias values(10,'Papasitos','Semestre 4')					 						
+
+/********************
 Claves unicas (uq)
 ********************/
 --Tabla de Usuarios
