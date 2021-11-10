@@ -1,0 +1,52 @@
+/*
+1. crear una vista de nombre n_usuarios que se encarge de mostrar los siguientes datos de los alumnos el no control, nombre del alumno, carrera , equipo , nombre del equipo al cual esta registrado, nombre de la categoria
+y mostrar el semestre limite
+*/
+create view n_usuarios
+as
+select a.noControl, u.nomCompleto,c.nombre,e.idEquipos,e.nombre,ca.nombre,ca.semestreLimite from Alumnos a join Usuarios u on a.idUsuarios=u.idUsuarios join Carreras c on a.idCarrera=c.idCarrera join Equipos e on a.idEquipos=e.idEquipos
+join Categorias ca on ca.idCategoria=e.idCategoria
+
+/*
+2. crear una vista llamda n_problemas con la cual mostrar el nombre del problema los y los puntos del problema como el color del globo el nomre del globo y mostrar el id del problema resuelto la duracion que tubo para resolver
+y su puntaje del problema resulto
+*/
+create view n_problemas
+as
+select b.nombre,b.puntos,p.globo,p.nombre,pr.idProblemaRes,pr.duracion,pr.puntaje from BancoProblemas b join Problemaspropuestos p on b.idBancoProblemas=p.idBancoProblemas 
+join ProblemasResueltos pr on pr.idPropuestos=p.idPropuestos 
+
+
+/*
+3. crear una vista llamada n_docente con la cual pueda ver id de la carrera del docente su especialidad y escolaridad que me muestre el nombre de la carrera del docente. el numero de control del alumno el nombre completo
+del usuario, email y password
+*/
+create view n_docentes
+as
+select d.idCarrera, d.especialidad, d.escolaridad,c.nombre,a.idCarrera, a.noControl,u.nomCompleto,u.email,u.password from Docentes d join Carreras c on d.idCarrera=c.idCarrera 
+join Alumnos a on a.idCarrera=c.idCarrera join Usuarios u on u.idUsuarios=a.idUsuarios
+
+
+/*
+4. crear una vista llamada n_equipos  donde me muestre los tres numeros de control de los equipos los puntos de los problemas resueltocomo el id de ediciones como el puntaje  en la tabla de ediciones el nombre y la fecha de registro
+como la de la tabla de problemas propuesto el nombre del problema y el globo
+*/
+create view n_equipos
+as
+select e.nocontrol1, e.nocontrol2,e.nocontrol3,e.puntos, p.idEdiciones,p.puntaje, ed.nombre,ed.fecharegistro,ba.nombre, ba.globo from Equipos e join ProblemasResueltos p on e.idEquipos=p.idPropuestos 
+join Ediciones ed on p.idEdiciones=ed.idEdiciones join Problemaspropuestos ba on ba.idPropuestos=p.idPropuestos
+
+/*
+5.  mostrar el nombre de la ediciones como la fecha del evento, el nombre de los equipos y sus puntos, de la categorias mostrar el nombre y el semestre limite, de los alumnos la de numero de control y en el semestre que se encuentran
+*/
+
+create view n_mostrar
+as
+select eq.nombre,eq.fechaevento,e.nombre,e.puntos,c.nombre,c.semestreLimite,a.noControl,a.semestre from Equipos e join Ediciones eq on e.idEquipos=eq.idEdiciones join Categorias c on c.idCategoria=e.idCategoria 
+join Alumnos a on a.idEquipos=e.idEquipos
+
+
+
+
+select COUNT(*) cant_puntos from n_equipos 
+group by puntos having count(*)>=8
