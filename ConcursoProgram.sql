@@ -1,4 +1,5 @@
 Create database ConcursoProgram
+
 /*USE ConcursoProgram 
 GO*/
 
@@ -40,8 +41,12 @@ create table Alumnos(
 	idUsuarios int not null,
 	semestre varchar(2) not null,
 	idCarrera int not null,
+	idEquipos int not null
 	constraint pk_numControl primary key (noControl)
 )
+go
+
+alter table Alumnos add idEquipos int not null
 go
 
 create table BancoProblemas(
@@ -123,36 +128,13 @@ create table Problemaspropuestos(
 idPropuestos int not null,
 nombre varchar(50) not null,
 globo varchar(10) not null,
+idBancoProblemas int not null
 CONSTRAINT pk_edicion PRIMARY KEY (idPropuestos)
 )
 go
 
-/********************
-Inserciones de tablas
-********************/
---Insercion tabla Problemas propuestos
-insert into Problemaspropuestos values(1,'Escriba el abecedario','Verde') 						
-insert into Problemaspropuestos values(2,'Tabla mutiplicar','Amarillo') 						
-insert into Problemaspropuestos values(3,'Escriba tu nombre tecla escriba','Rojo') 						
-insert into Problemaspropuestos values(4,'Sacar numero piesa el jugador','Negro') 						
-insert into Problemaspropuestos values(5,'Sacar numero primos','Verde') 						
-insert into Problemaspropuestos values(6,'Hacer calendario ','Amarillo') 						
-insert into Problemaspropuestos values(7,'Calcular area de triangulo','Rojo') 						
-insert into Problemaspropuestos values(8,'Hacer que diga hora','Negro') 						
-insert into Problemaspropuestos values(9,'Hacer una calculadora','Verde') 						
-insert into Problemaspropuestos values(10,'Tener control de dias','Amarillo')
-
---Inserciones tabla Categoria
-insert into Categorias values(1,'Pigüinos explocivo','Semestre 5')					
-insert into Categorias values(2,'Black star','Semestre 2')					
-insert into Categorias values(3,'Los yhiii','Semestre 5')					
-insert into Categorias values(4,'Los R','Semestre 2')					
-insert into Categorias values(5,'Super chica','Semestre 5')					
-insert into Categorias values(6,'Marselo','Semestre 4')					
-insert into Categorias values(7,'Los 3 chiflados','Semestre 2')					
-insert into Categorias values(8,'Masha y oso','Semestre 4')					
-insert into Categorias values(9,'Taquitos','Semestre 2')					
-insert into Categorias values(10,'Papasitos','Semestre 4')					 						
+alter table Problemaspropuestos add idBancoProblemas int not null
+go			 						
 
 /********************
 Claves unicas (uq)
@@ -189,6 +171,8 @@ go
 ALTER TABLE Problemaspropuestos ADD CONSTRAINT UQ_Globo UNIQUE (globo)
 go
 
+alter table Problemaspropuestos drop constraint UQ_Globo
+go
 
 /**************
 Creacion de Fk 
@@ -197,6 +181,8 @@ Creacion de Fk
 alter table Alumnos add constraint fk_usuario_alumnos foreign key (idUsuarios) references Usuarios (idUsuarios)
 go
 alter table Alumnos add constraint fk_carrera_alumnos foreign key (idCarrera) references Carreras(idCarrera)
+go
+alter table Alumnos add constraint FK_equipos_alumnos foreign key (idEquipos) references Equipos(idEquipos)
 go
 
 --Tabla de ProblemasResueltos
@@ -213,6 +199,10 @@ go
 ALTER TABLE Equipos ADD CONSTRAINT FK_Categorias_Equipos FOREIGN KEY (idCategoria) REFERENCES Categorias (idCategoria)
 go
 ALTER TABLE Equipos ADD CONSTRAINT FK_ediciones_Equipos FOREIGN KEY (idEdiciones) REFERENCES Ediciones (idEdiciones)
+go
+
+--Table de ProblemasPropuestos
+alter table Problemaspropuestos add constraint Fk_bancoPr_ProblemasPro foreign key (idBancoProblemas) References BancoProblemas (idBancoProblemas)
 go
 
 /**********************
@@ -239,8 +229,8 @@ alter table ProblemasResueltos add constraint chk_puntaje check (puntaje<=5)
 go
 
 --Table de BancoProblemas
-alter table BancoProblemas add constraint chk_tiempMaxEjec check (tiempMaxEjec<=5)
-go
+/*alter table BancoProblemas add constraint chk_tiempMaxEjec check (tiempMaxEjec<=5)
+go*/
 alter table BancoProblemas add constraint chk_puntos check (puntos<=5)
 go
 
@@ -249,8 +239,9 @@ ALTER TABLE Docentes ADD CONSTRAINT CHK_Cedula_Docente CHECK (cedula LIKE '[0-9]
 go
 
 --Table de Ediciones
-ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Registro CHECK (fecharegistro LIKE '[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]')
+/*ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Registro CHECK (fecharegistro LIKE '[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]')
 go
+alter table Ediciones drop constraint CHK_Fecha_Registro*/
 ALTER TABLE Ediciones ADD CONSTRAINT CHK_Fecha_Evento CHECK(fecharegistro<fechaevento)
 go
 
