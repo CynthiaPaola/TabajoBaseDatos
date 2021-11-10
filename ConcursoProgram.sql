@@ -130,6 +130,67 @@ go
 /********************
 Inserciones de tablas
 ********************/
+
+/**Tabla Usuarios**/
+
+insert into Usuarios values('1','Juan Rodriguez Camarena','M','351-458-6987','juanro_c@gmail.com','1','Alumnos','fulanitos333')							
+insert into usuarios values('2','Ernesto Fernandez Ortiz','M','351-266-6978','erne_fo@outlook.com','1','Docentes','open12')
+insert into usuarios values('3','Maria Aguilar Solis','F','351-269-4514','mari_so@gmail.com','1','Alumnos','cuatrocientos')
+insert into usuarios values('4','Fernanda Maldonado Juarez','F','351-287-1536','fermal44@gmail.com','1','Asesores','admin48')
+insert into usuarios values('5','Francisco Godinez Gavilan','M','351-258-4891','frangg3@outlook.com','0','Docentes','pancho0')
+insert into usuarios values('6','Angeles Romero Barriga','F','351-487-2110','angy_rb6@outlook.com','1','Asesores','#caidodelcielo')
+insert into usuarios values('7','Luz Elena Alvarez Villa','F','351-569-0234','luz_villa78@gmail.com','0','Alumnos','luzdedia')
+insert into usuarios values('8','Antonio Gomez Fernandez','M','351-487-1012','anto_gf17@gmail.com','1','Docentes','hormigas@')
+insert into usuarios values('9','Margarita Savala Herrera','F','351-126-4803 ','magy_sh@gmail.com','1','Asesores','everyone')
+insert into usuarios values('10','Felipe Valdez Garcia','M','351-647-1248','feli_vg9@gmail.com','0','Alumnos','soyfeli')
+
+select * from Usuarios	
+
+/**Tabla Docentes**/	
+
+insert into docentes values('1','10','Licenciatura','Ingeniero Electrico','120-135-2425','Ingenieria en Electronica')
+insert into docentes values('2','88','Doctorado','Licenciado en Mercadotecnia','122-131-2426','Licenciatura en Contador Publico')
+insert into docentes values('3','20','Maestria','Ingenieria en Industrias Alimentarias','120-125-2445','Ingenieria en Industrias Alimentarias')
+insert into docentes values('4','22','Maestria','Mestro en Sistemas Computacionales','220-125-6894','Ingenieria en Sistemas Computacionales')
+insert into docentes values('5','90','Licenciatura','Licenciado Contador Publico ','120-168-2596','Licenciatura en Mercadotecnia ')
+insert into docentes values('6','30','Doctorado','Doctor en Administracion','140-458-4785','Ingenieria en Gestion Empresarial')
+insert into docentes values('7','80','Maestria','Maestro en Desarrollo de Software','182-459-7894','Licenciatura en Desarrollo de software')
+insert into docentes values('8','33','Maestria','Maestro en Gestion Empresarial','130-659-1587','Ingenieria Bioquimica')
+insert into docentes values('9','11','Ingeniero','Simulacion','120-135-6568','Mercadotecnia')
+insert into docentes values('10','99','Doctorado','Doctor en Ciencias Medicas','120-135-6569','Licenciatura en Ciencias Medicas')	
+
+select * from Docentes
+
+/**Tabla Carreras**/
+
+insert into carreras values('10','Ingenieria en Electronica ','IE')
+insert into carreras values('11','Licenciatura en Contador Publico','LCP')
+insert into carreras values('20','Ingenieria en Industrias Alimentarias','IIA')
+insert into carreras values('22','Ingenieria en Sistemas Computacionales','ISC')
+insert into carreras values('30','Ingenieria Bioquimica ','IB')
+insert into carreras values('33','Ingenieria en Gestion Empresarial ','IGE')
+insert into carreras values('80','Licenciatura en Desarrollo de software ','LDS')
+insert into carreras values('88','Ingenieria Industrial','II')
+insert into carreras values('90','Licenciatura en Mercadotecnia ','LM')
+insert into carreras values('99','Licenciatura en Ciencias Medicas','LCM')
+
+select *from Carreras
+
+/**Tabla Alumnos**/
+
+insert into alumnos values('20010015','1','4A','10')
+insert into alumnos values('17216512','3','7B','11')
+insert into alumnos values('17236313','2','2A','20')
+insert into alumnos values('17215678','7','5A','22')
+insert into alumnos values('17215648','10','7B','30')
+insert into alumnos values('17215473','5','1B','33')
+insert into alumnos values('17216515','3','3A','80')
+insert into alumnos values('17216146','4','4A','88')
+insert into alumnos values('17216511','6','6A','90')
+insert into alumnos values('17214751','8','8B','99')
+
+select * from Alumnos
+
 --Insercion tabla Problemas propuestos
 insert into Problemaspropuestos values(1,'Escriba el abecedario','Verde') 						
 insert into Problemaspropuestos values(2,'Tabla mutiplicar','Amarillo') 						
