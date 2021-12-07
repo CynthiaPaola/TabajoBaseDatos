@@ -112,6 +112,7 @@ insert into Problemaspropuestos values(8,'Hacer un reloj hora ','Negro',8)
 insert into Problemaspropuestos values(9,'Realizar una calculadora','Verde',9)
 insert into Problemaspropuestos values(10,'Realizar las operaciones basicas','Amarillo',10)						
 
+
 --Inserciones de la tabla Problemas Resueltos
 insert into ProblemasResueltos values(1,1,1,'22:56:59.0000000',1)	
 insert into ProblemasResueltos values(2,2,2,'21:56:59.0000000',5)	
