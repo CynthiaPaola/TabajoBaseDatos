@@ -15,7 +15,7 @@ grant select, insert, update, delete on Usuarios to Docentes
 grant select, insert, update, delete on Alumnos to Docentes
 grant select, insert, update, delete on Docentes to Docentes
 grant select, insert, update, delete on Equipos to Docentes
-grant select, insert, update, delete on Categorías to Docentes
+grant select, insert, update, delete on CategorÃ­as to Docentes
 grant select, insert, update, delete on Carreras to Docentes
 grant select, insert, update, delete on Ediciones to Docentes
 grant select, insert, update, delete on ProblemasResueltos to Docentes
@@ -29,7 +29,7 @@ grant select, insert, update on Usuarios to Asesores
 grant select on Alumnos to Asesores
 grant select, insert, update on Docentes to Asesores
 grant select on Equipos to Asesores
-grant select, update on Categorías to Asesores
+grant select, update on CategorÃ­as to Asesores
 grant select, insert, update, delete on Carreras to Asesores
 grant select, insert, update on Ediciones to Asesores
 grant select on ProblemasResueltos to Asesores
@@ -61,3 +61,29 @@ exec sp_addsrvrolemember FranciscoGodinezGavilan
 exec sp_addsrvrolemember db_owner,Docentes
 
 -- Remover a un usuario de su rol
+
+--Creacion de Usuarios Asesores
+create login Fernanda Maldonado Juarez
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+create user Fernanda Maldonado Juarez
+go
+exec sp_addrolemember Asesores, Fernanda Maldonado Juarez
+
+create login Margarita Savala Herrera
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+create user Margarita Savala Herrera
+go
+exec sp_addrolemember Asesores, Margarita Savala Herrera
+
+--Creacion de Usuarios Docentes
+create login Ernesto Fernandez Ortiz
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+create user Ernesto Fernandez Ortiz
+go
+exec sp_addrolemember Docentes, Ernesto Fernandez Ortiz
