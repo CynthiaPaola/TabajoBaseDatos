@@ -9,13 +9,14 @@ go
 -- Creacion del rol de Asesores
 create role Asesores
 go
+drop role alumnos
 
 --Asinacion de permisos del usuario Docentes.
 grant select, insert, update, delete on Usuarios to Docentes
 grant select, insert, update, delete on Alumnos to Docentes
 grant select, insert, update, delete on Docentes to Docentes
 grant select, insert, update, delete on Equipos to Docentes
-grant select, insert, update, delete on Categorías to Docentes
+grant select, insert, update, delete on Categorias to Docentes
 grant select, insert, update, delete on Carreras to Docentes
 grant select, insert, update, delete on Ediciones to Docentes
 grant select, insert, update, delete on ProblemasResueltos to Docentes
@@ -29,7 +30,7 @@ grant select, insert, update on Usuarios to Asesores
 grant select on Alumnos to Asesores
 grant select, insert, update on Docentes to Asesores
 grant select on Equipos to Asesores
-grant select, update on Categorías to Asesores
+grant select, update on Categorias to Asesores
 grant select, insert, update, delete on Carreras to Asesores
 grant select, insert, update on Ediciones to Asesores
 grant select on ProblemasResueltos to Asesores
@@ -51,39 +52,72 @@ grant select on ProblemasPropuestos to Alumnos
 grant select on BancoProblemas to Alumnos
 go
 
+--Creacion de Usuarios Docentes
+create login ErnestoFernandezOrtiz
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+
+create user ErnestoFernandezOrtiz
+go
+
+create login FranciscoGodinezGavilan
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+
+create user FranciscoGodinezGavilan
+go
+
 --Asignacion de usuarios al rol de docentes
 exec sp_addrolemember Docentes, ErnestoFernandezOrtiz
+exec sp_addrolemember Docentes, FranciscoGodinezGavilan
 
--- Creacion del Usuario ErnestoFernandezOrtiza
-
--- Asignacion del usuarios ErnestoFernandezOrtiza roles
-exec sp_addsrvrolemember FranciscoGodinezGavilan
-exec sp_addsrvrolemember db_owner,Docentes
+-- Asignacion del usuarios FranciscoGodinezGavilan al rol de Docente
+exec sp_addsrvrolemember ErnestoFernandezOrtiz, sysadmin
+exec sp_addrolemember db_owner,Docentes
+exec sp_addsrvrolemember FranciscoGodinezGavilan, sysadmin
+exec sp_addrolemember db_owner,Docentes
 
 -- Remover a un usuario de su rol
 
 --Creacion de Usuarios Asesores
-create login Fernanda Maldonado Juarez
+create login FernandaMaldonadoJuarez
 with password='T0roM@x',
 default_database=ConcursoProgram
 go
-create user Fernanda Maldonado Juarez
+create user FernandaMaldonadoJuarez
 go
-exec sp_addrolemember Asesores, Fernanda Maldonado Juarez
 
-create login Margarita Savala Herrera
+create login MargaritaSavalaHerrera
 with password='T0roM@x',
 default_database=ConcursoProgram
 go
-create user Margarita Savala Herrera
-go
-exec sp_addrolemember Asesores, Margarita Savala Herrera
 
---Creacion de Usuarios Docentes
-create login Ernesto Fernandez Ortiz
+create user MargaritaSavalaHerrera
+go
+
+--Asignacion de usuarios al rol de Asesores
+exec sp_addrolemember Asesores, MargaritaSavalaHerrera
+exec sp_addrolemember Asesores, FernandaMaldonadoJuarez
+
+-- Creacion de los Usuarios Alumnos
+create login JuanRodriguezCamarena
 with password='T0roM@x',
 default_database=ConcursoProgram
 go
-create user Ernesto Fernandez Ortiz
+
+create user JuanRodriguezCamarena
 go
-exec sp_addrolemember Docentes, Ernesto Fernandez Ortiz
+
+create login FelipeValdezGarcia
+with password='T0roM@x',
+default_database=ConcursoProgram
+go
+
+create user FelipeValdezGarcia
+go
+
+--Asignacion de usuarios al rol de Alumnos
+exec sp_addrolemember Alumnos, JuanRodriguezCamarena
+exec sp_addrolemember Alumnos, FelipeValdezGarcia
